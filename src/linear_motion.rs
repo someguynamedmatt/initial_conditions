@@ -2,13 +2,15 @@ extern crate num;
 
 use num::Float;
 
-/// Work as a dot product of a *constant* force (F) applied at an angle
-/// (theta) over a distance (d). `W = F . d`
+/// Returns work in Newton-meters. Work, here, is calculated assuming a constant Force (f)
+/// over an angle (theta) across a distance (d).
 ///
-///   - force: N
-///   - theta: rad
-///   - dist:  m
+/// # Args
+/// * `f`     - force in newtons
+/// * `theta` - angle in radians
+/// * `d`     - distance in meters
 ///
+/// # Notes:
 ///   See [here](https://en.wikipedia.org/wiki/Work_(physics)#Mathematical_calculation) for more
 ///   info
 pub fn work<T>(f: &T, theta: &T, d: &T) -> T

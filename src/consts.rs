@@ -1,4 +1,4 @@
-/// Useful Physical and Astronomical constants
+//! Useful Physical and Astronomical constants
 
 
 /// Speed of light in a vaccuum `c`: 3.00 * 10^(8) (m*s^(-1))
