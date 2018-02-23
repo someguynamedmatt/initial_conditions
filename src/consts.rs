@@ -1,5 +1,6 @@
 /// Useful Physical and Astronomical constants
 
+
 /// Speed of light in a vaccuum `c`: 3.00 * 10^(8) (m*s^(-1))
 #[allow(dead_code)]
 pub const LIGHT_SPEED: f64 = 3.00e8_f64;
@@ -28,7 +29,7 @@ pub const ELECTRON_CHARGE: f64 = 1.60218e-19_f64;
 #[allow(dead_code)]
 pub const PLANCKS_CONST: f64 = 6.63e-34_f64;
 
-/// Mass of the Eart: 5.98 * 10^(24) kg
+/// Mass of the Earth: 5.98 * 10^(24) kg
 #[allow(dead_code)]
 pub const EARTH_MASS: f64 = 5.98e24_f64;
 

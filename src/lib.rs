@@ -1,4 +1,7 @@
+extern crate num;
+
 mod consts;
+mod linear_motion;
 
 pub use consts::{
     LIGHT_SPEED,
@@ -20,6 +23,10 @@ pub use consts::{
     ANGSTROM,
     AMU_KG,
     AMU_MEV
+};
+
+pub use linear_motion::{
+    work,
 };
 
 #[cfg(test)]
