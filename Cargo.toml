@@ -3,4 +3,9 @@ name = "initial_conditions"
 version = "0.1.0"
 authors = ["Matt <young.qubit@gmail.com>"]
 
+repository = "https://github.com/someguynamedmatt/initial_conditions"
+keywords = ["physics", "mechanics", "newtonian"]
+
 [dependencies]
+num = "0.1.42"
+num-traits = "0.2.0"
