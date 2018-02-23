@@ -1,7 +1,6 @@
-//! Useful Physical and Astronomical constants
-extern crate num;
+/// Useful Physical and Astronomical constants
 
-use std::f64::consts;
+extern crate num;
 
 /// Speed of light in a vaccuum `c`: 3.00 * 10^(8) (m*s^(-1))
 pub const c: f64 = 3.00e8_f64;
@@ -50,3 +49,13 @@ pub const MOON_ORBIT_RAD: f64 = 3.84e8_f64;
 
 /// Mass of Earth's Sun: 1.99 * 10^(30) kg
 pub const SUN_MASS: f64 = 1.99e30_f64;
+
+/// 1 Angstrom in meters: 10^(-10) m
+pub const ANGSTROM: f64 = 10e-10_f64;
+
+
+/// Atomic Mass Unit (amu) in kg: 1.66 * 10^(-27) kg
+pub const AMU_KG: f64 = 1.66e-27_f64;
+
+/// Atomic Mass Unit (amu) in MeV: 931 MeV
+pub const AMU_MEV: f64 = 931_f64;
