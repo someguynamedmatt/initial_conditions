@@ -5,7 +5,7 @@
 [Read the docs](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html)
 
 
-## A simple mechanics library
+## A simple physics library
 
 Useful constants and kinematics functions
 
