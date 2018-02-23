@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Matt <young.qubit@gmail.com>"]
 
 repository = "https://github.com/someguynamedmatt/initial_conditions"
+documentation = "https://someguynamedmatt.github.io/initial_conditions/initial_conditions/"
 keywords = ["physics", "mechanics", "newtonian"]
 
 [dependencies]
