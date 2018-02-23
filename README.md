@@ -9,3 +9,5 @@
 
 Useful constants and kinematics functions
 
+- This is still, very much, a work in progress. Physics is hard when you can't do calculus. I need to find (or create) an approximation library for integrations.
+
