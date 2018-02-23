@@ -6,9 +6,9 @@ use num::Float;
 /// over an angle (theta) across a distance (d).
 ///
 /// # Args
-/// * `f`     - force in newtons
-/// * `theta` - angle in radians
-/// * `d`     - distance in meters
+/// * `f`: `f64`     - force in newtons
+/// * `theta`: `f64` - angle in radians
+/// * `d`: `f64`     - distance in meters
 ///
 /// # Notes:
 ///   See [here](https://en.wikipedia.org/wiki/Work_(physics)#Mathematical_calculation) for more
@@ -51,3 +51,4 @@ mod tests {
         assert_eq!(work, 120.0);
     }
 }
+

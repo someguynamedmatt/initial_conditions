@@ -1,7 +1,7 @@
 extern crate num;
 
 mod consts;
-mod linear_motion;
+mod kinematics;
 
 pub use consts::{
     LIGHT_SPEED,
@@ -25,15 +25,11 @@ pub use consts::{
     AMU_MEV
 };
 
-pub use linear_motion::{
-    work,
+pub use kinematics::work::{
+    work
 };
 
-#[cfg(test)]
-mod tests {
-    use super::consts as _const;
-    #[test]
-    fn it_works() {
-        assert_eq!(_const::AMU_MEV, 931.0 as f64);
-    }
-}
+pub use kinematics::motion::{
+    first_velocity,
+    first_accel
+};
