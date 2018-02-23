@@ -1,0 +1,6 @@
+[package]
+name = "initial_conditions"
+version = "0.1.0"
+authors = ["Matt <young.qubit@gmail.com>"]
+
+[dependencies]
