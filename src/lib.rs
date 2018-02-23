@@ -1,8 +1,10 @@
+//! initial_conditions
+//!
+//! A simple physics library
+
 extern crate num;
 
 mod consts;
-mod kinematics;
-
 pub use consts::{
     LIGHT_SPEED,
     G,
@@ -25,11 +27,5 @@ pub use consts::{
     AMU_MEV
 };
 
-pub use kinematics::work::{
-    work
-};
-
-pub use kinematics::motion::{
-    first_velocity,
-    first_accel
-};
+mod kinematics;
+pub use kinematics::*;
