@@ -2,6 +2,8 @@ extern crate num;
 
 use num::Float;
 
+/// ## Work (constant acceleration):
+///
 /// Returns work in Newton-meters. Work, here, is calculated assuming a constant Force (f)
 /// over an angle (theta) across a distance (d).
 ///
