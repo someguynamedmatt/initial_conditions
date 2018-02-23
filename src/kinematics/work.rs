@@ -18,7 +18,7 @@ use num::Float;
 pub fn work<T>(f: &T, theta: &T, d: &T) -> T
     where T: Float
 {
-    assert!(d >= T::zero(), "distance cannot be negative");
+    assert!(d >= &T::zero(), "distance cannot be negative");
     (*f * T::cos(*theta)) * *d
 }
 
