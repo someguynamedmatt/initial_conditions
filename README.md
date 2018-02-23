@@ -3,3 +3,5 @@
 ___
 
 Simple mechanics library
+
+> [Read the documentation here](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html)
