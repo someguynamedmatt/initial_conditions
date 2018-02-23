@@ -21,7 +21,7 @@ pub mod _const {
         ANGSTROM,
         AMU_KG,
         AMU_MEV
-    }
+    };
 }
 
 #[cfg(test)]
