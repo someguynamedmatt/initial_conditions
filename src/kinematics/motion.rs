@@ -18,6 +18,7 @@ use num::Float;
 pub fn first_velocity<T>(v_0: T, a: T, t: T) -> T
     where T: Float
 {
+    assert!(t >= T::zero(), "time cannot be negative");
     v_0 + (a * t)
 }
 
@@ -36,6 +37,7 @@ pub fn first_velocity<T>(v_0: T, a: T, t: T) -> T
 pub fn first_accel<T>(v_f: T, v_i: T, t: T) -> T
     where T: Float
 {
+    assert!(t >= T::zero(), "time cannot be negative");
     (v_f - v_i) / t
 }
 
