@@ -30,8 +30,30 @@ Be sure to [read the documentation](https://someguynamedmatt.github.io/initial_c
 
 All arguments and return values are implicitly returned in SI units (i.e. radians. Specific units are noted in the [documentation](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html))
 
+## Project structure
 
-## Capabilities right now:
+- Constants are exported directly from `src/lib.rs`
+
+- Generalized modules are exported in the main `src/lib.rs` file
+> "Generalized", here, means general physics topics: kinematics, electromagnetism, astro, etc.
+
+- Specific topic are exported from the more general, e.g.:
+
+```
+    // Example structure only
+    lib.rs
+         |
+         | kinematics/
+                     |
+                     | linear_motion.rs
+                     | circular_motion.rs
+
+         | electromag/
+                     | magnetism.rs
+
+```
+
+## Capabilities right now (and still being added):
 
 - Useful constants
 - Kinematics functions
