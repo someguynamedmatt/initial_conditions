@@ -6,6 +6,29 @@
 
 ## How to use:
 
+Add `initial_conditions` to your `Cargo.toml` file:
+
+```
+initial_conditions = "0.3.0"
+```
+> Check the crates.io badge above to see which version is the latest
+
+And now use it in your project...
+
+```rust
+extern crate initial_conditions;
+
+use initial_conditions::kinematics::*;
+
+let w = work::work(/* args */);
+```
+
+Be sure to [read the documentation](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html) to see what the lib has to offer.
+
+## Units
+
+All arguments and return values are implicitly returned in SI units (i.e. radians. Specific units are noted in the [documentation](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html))
+
 
 ## Capabilities right now:
 
