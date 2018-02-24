@@ -9,6 +9,7 @@
 Add `initial_conditions` to your `Cargo.toml` file:
 
 ```
+[dependencies]
 initial_conditions = "0.3.0"
 ```
 > Check the crates.io badge above to see which version is the latest
