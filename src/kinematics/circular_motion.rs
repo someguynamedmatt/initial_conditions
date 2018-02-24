@@ -17,8 +17,8 @@ use num::Float;
 pub fn average_speed<T>(period: T, r: T) -> T
     where T: Float
 {
-    assert!(r >= 0, "Radius cannot be negative");
-    assert!(period >= 0, "Period cannot be negative");
+    assert!(r >= T::zero(), "Radius cannot be negative");
+    assert!(period >= T::zero(), "Period cannot be negative");
 
     let two = num::cast::<f64, T>(2.0).unwrap();
     let pi = num::cast::<f64, T>(consts::PI).unwrap();
@@ -40,7 +40,7 @@ pub fn average_speed<T>(period: T, r: T) -> T
 pub fn acceleration<T>(v: T, r: T) -> T
     where T: Float
 {
-    assert!(r >= 0, "Radius cannot be negative");
+    assert!(r >= T::zero(), "Radius cannot be negative");
 
     (v * v) / num::cast(r).unwrap()
 }
