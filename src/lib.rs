@@ -27,5 +27,4 @@ pub use consts::{
     AMU_MEV
 };
 
-mod kinematics;
-pub use kinematics::*;
+pub mod kinematics;

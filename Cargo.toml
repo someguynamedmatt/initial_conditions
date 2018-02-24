@@ -1,13 +1,17 @@
 [package]
 name = "initial_conditions"
 license = "MIT/Apache-2.0"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Matt <young.qubit@gmail.com>"]
 description = "A helpful physics lib: mechanics, useful constants, and more."
 
 repository = "https://github.com/someguynamedmatt/initial_conditions"
 documentation = "https://someguynamedmatt.github.io/initial_conditions/initial_conditions/"
-keywords = ["physics", "mechanics", "newtonian"]
+keywords = ["physics", "mechanics", "newtonian", "science"]
+
+[lib]
+name = "initial_conditions"
+path = "src/lib.rs"
 
 [dependencies]
 num = "0.1.42"
