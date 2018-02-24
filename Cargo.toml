@@ -7,6 +7,7 @@ description = "A helpful physics lib: mechanics, useful constants, and more."
 
 repository = "https://github.com/someguynamedmatt/initial_conditions"
 documentation = "https://someguynamedmatt.github.io/initial_conditions/initial_conditions/"
+readme = "./README.md"
 keywords = ["physics", "mechanics", "newtonian", "science"]
 
 [lib]
