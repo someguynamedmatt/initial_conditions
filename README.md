@@ -1,6 +1,6 @@
 # Initial Conditions (a physics library in Rust)
 [![Build Status](https://travis-ci.org/someguynamedmatt/initial_conditions.svg?branch=master)](https://travis-ci.org/someguynamedmatt/initial_conditions)
-[![](http://meritbadge.herokuapp.com/initial_conditions)](https://crates.io/crates/initial_conditions)
+[![](https://img.shields.io/crates/v/initial_conditions.svg)](https://crates.io/crates/initial_conditions)
 
 [Read the docs](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html)
 
