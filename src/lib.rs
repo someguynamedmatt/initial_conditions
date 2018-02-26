@@ -29,4 +29,4 @@ pub use consts::{
 
 pub mod kinematics;
 
-mod utils;
+pub mod utils;

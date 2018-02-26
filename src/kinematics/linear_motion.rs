@@ -1,6 +1,10 @@
 extern crate num;
 #[allow(unused_imports)] use num::Float;
-use utils::{VecTraits};
+use utils::vec_traits::{Dot,
+                        ScalarMult,
+                        ScalarDiv,
+                        AddVec,
+                        SubVec};
 
 /// ## First Equation of Motion:
 ///
