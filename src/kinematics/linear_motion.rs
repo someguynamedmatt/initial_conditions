@@ -1,7 +1,6 @@
 extern crate num;
 #[allow(unused_imports)] use num::Float;
-use utils::vec_traits::{Dot,
-                        ScalarMult,
+use utils::vec_traits::{ScalarMult,
                         ScalarDiv,
                         AddVec,
                         SubVec};
@@ -23,6 +22,7 @@ pub fn first_velocity<T>(mut acc: Vec<T>, v_i: Vec<T>, time: T) -> Vec<T>
     where T: Float
 {
     assert!(time >= T::zero(), "time cannot be negative");
+
     acc.scalar_mult(time);
     v_i.add_vec(acc)
 }
@@ -43,6 +43,7 @@ pub fn first_accel<T>(v_f: Vec<T>, v_i: Vec<T>, time: T) -> Vec<T>
     where T: Float
 {
     assert!(time >= T::zero(), "time cannot be negative");
+
     let mut a = v_f.sub_vec(v_i);
     a.scalar_div(time);
     a
@@ -61,16 +62,17 @@ pub fn first_accel<T>(v_f: Vec<T>, v_i: Vec<T>, time: T) -> Vec<T>
 ///
 /// # Notes:
 ///   - This derivation can be [understood here](https://en.wikipedia.org/wiki/Equations_of_motion#Uniform_acceleration)
-pub fn second_position<T>(x_i: T, v_i: T, t: T, a: T) -> T
+pub fn second_position<T>(x_i: Vec<T>, mut v_i: Vec<T>, time: T, mut acc: Vec<T>) -> Vec<T>
     where T: Float
 {
-    x_i + (v_i * t) + ((a * (t * t)) / num::cast(2.0).unwrap())
-}
+    assert!(time >= T::zero(), "Time cannot be negative");
 
-pub fn dots<T>(v1: Vec<T>, v2: Vec<T>) -> T
-    where T: Float
-{
-    v1.dot(v2)
+    v_i.scalar_mult(time);
+    let t_sqrd = time * time;
+    acc.scalar_mult(t_sqrd);
+    acc.scalar_div(num::cast(2.0).unwrap());
+
+    x_i.add_vec(v_i).add_vec(acc)
 }
 
 #[cfg(test)]
@@ -79,9 +81,6 @@ mod tests {
 
     use super::*;
     #[allow(unused_imports)] use num::Float;
-    use num::abs;
-
-    const EPSILON: f64 = 1e-10;
 
     #[test]
     fn first_velocity_1() {
@@ -128,14 +127,27 @@ mod tests {
     }
 
     #[test]
-    fn test_second_position() {
-        let v_i = num::zero();
-        let x_i = num::zero();
+    fn test_second_position1() {
+        let v_i = vec![1.0, 1.0, 1.0];
+        let x_i = vec![0.0, 0.0, 0.0];
         let t = 10.0;
-        let a = 9.8;
+        let a = vec![2.0, 2.0, 2.0];
         let x = second_position(x_i, v_i, t, a);
 
-        let diff = abs(x - 490.0);
-        assert!(diff <= EPSILON);
+        let expected = vec![110.0, 110.0, 110.0];
+        assert_eq!(x, expected);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_second_position2() {
+        let v_i = vec![0.0, 0.0, 0.0];
+        let x_i = vec![0.0, 0.0, 0.0];
+        let t = -30.0;
+        let a = vec![0.0, 0.0, -9.8];
+        let x = second_position(x_i, v_i, t, a);
+
+        let expected = vec![0.0, 0.0, -4410.0];
+        assert_eq!(x, expected);
     }
 }
