@@ -1,6 +1,6 @@
 extern crate num;
 
-use num::Float;
+#[allow(unused_imports)] use num::Float;
 
 /// ## Work (constant acceleration):
 ///
@@ -29,7 +29,7 @@ mod tests {
     use super::*;
     use std::f64::consts;
     use num::abs;
-    use num::Float;
+    #[allow(unused_imports)] use num::Float;
 
     const EPSILON: f64 = 1e-10;
 

@@ -1,7 +1,7 @@
 extern crate num;
 
 use std::f64::consts;
-use num::Float;
+#[allow(unused_imports)] use num::Float;
 
 /// ## Uniform circular motion
 ///
@@ -50,9 +50,8 @@ mod tests {
     extern crate num;
 
     use super::*;
-    use std::f64::consts;
     use num::abs;
-    use num::Float;
+    #[allow(unused_imports)] use num::Float;
 
     const EPSILON: f64 = 1e-10;
 
