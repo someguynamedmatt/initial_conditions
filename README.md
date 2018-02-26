@@ -1,7 +1,7 @@
 # Initial Conditions (a physics library in Rust)
 [![Build Status](https://travis-ci.org/someguynamedmatt/initial_conditions.svg?branch=master)](https://travis-ci.org/someguynamedmatt/initial_conditions)
 [![](https://img.shields.io/crates/v/initial_conditions.svg)](https://crates.io/crates/initial_conditions)
-[![Coverage Status](https://coveralls.io/repos/github/someguynamedmatt/initial_conditions/badge.svg)](https://coveralls.io/github/someguynamedmatt/initial_conditions)
+[![Coverage Status](https://coveralls.io/repos/github/someguynamedmatt/initial_conditions/badge.svg?branch=master)](https://coveralls.io/github/someguynamedmatt/initial_conditions?branch=master)
 
 [Read the docs](https://someguynamedmatt.github.io/initial_conditions/initial_conditions/index.html)
 
