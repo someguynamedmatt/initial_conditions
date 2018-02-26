@@ -1,13 +1,13 @@
 ---
 after_success: |
-    [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ] && cargo doc && echo "<meta http-equiv=refresh content=0;url=`echo $TRAVIS_REPO_SLUG | cut -d '/' -f 2`/index.html>" > target/doc/index.html && sudo pip install ghp-import && ghp-import -n target/doc && git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages && sudo apt-get install libcurl4-openssl-dev libelf-dev libdw-dev cmake gcc binutils-dev libiberty-dev zlib1g-dev && wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz && tar xzf master.tar.gz && mkdir kcov-master/build && cd kcov-master/build && cmake .. && make && sudo make install && cd ../.. && kcov --coveralls-id=$TRAVIS_JOB_ID --exclude-pattern=/.cargo target/kcov target/debug/initial_conditions-*
+    [ $TRAVIS_BRANCH = master ] && [ $TRAVIS_PULL_REQUEST = false ] && cargo doc && echo "<meta http-equiv=refresh content=0;url=`echo $TRAVIS_REPO_SLUG | cut -d '/' -f 2`/index.html>" > target/doc/index.html && sudo pip install ghp-import && ghp-import -n target/doc && git push -fq https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git gh-pages && sudo apt-get install libcurl4-openssl-dev libelf-dev libdw-dev cmake gcc binutils-dev libiberty-dev zlib1g-dev && wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz && tar xzf master.tar.gz && mkdir kcov-master/build && cd kcov-master/build && cmake .. && make && sudo make install && cd ../.. && kcov --coveralls-id=$TRAVIS_JOB_ID --exclude-pattern=/.cargo,/usr/lib --verify target/kcov target/debug/initial_conditions-*
 language: rust
 notifications:
   email:
     on_success: never
 script:
   - "cargo build --verbose"
-  - "cargo test --verbose"
+  - "cargo test --no-run"
 env:
   global:
     secure: nPM5Hq6lfhmP672V7j6drQXZIACKNC/mmmMpOdAk/voiizajcoflUcSmFCFqOwJI7JET6ckaE+zmbfZyx7XWN9BbwqOXvC3ykTZTIC15We2DYEiSQ6t0CJRLcJZwBVzIxYD4Fyzwvuetry3LERuRPcG9yLh8IQ5h5Ca9zla99+uoqyJlzxN1GpMPwKOYq1MtZxmXgQswkFH44KlMeRuz025zDBd8LMn7uQ60+6kbpn4mcapLlHEIUOlrSEb4sE6cysa9RQ5geNDsTZndCYOUUR3XYilB/Cj/JqRhCuK9HdPr8rAhRsefxDPG9pL5qojTyinkWM3LbsYQx4GJ+1uU6lZ9j/Tf4yi3rkB7Nom1XJ55WzGjqmLnqoPT/TycvEDoI5mvqq5fVUWc7lrXO+ylJnlqMEjwu9m5xfPweVAkHh4r8zaBSnuSYsW39hbwdaLs0zISqb9bFGmUE8UdfdFM3SxeMkl6E0Cm1Xl/VMdKTnu8Cw6txrIbQuF3JmeCxvcfgicMaJRc24jgJK05tAtnkLkYFTJoMkI+AH79vNKALP6TKMy00HGWYUclXB0bDUWC04p1eAHXXH+RI4zuL8xkk8yahHOuNpm7I2sTzB+S6qdiSW3Dqt7cKxGCHZD0oJrIBk9ahgtUoi6xVar9ENombdB5ZvBaYWGRC7NI9M2JPpQ=
