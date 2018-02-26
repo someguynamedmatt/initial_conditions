@@ -48,6 +48,14 @@ pub trait EuclideanNorm<T> {
     fn euc_norm(self) -> T where T: Float;
 }
 
+/// # cross_pro (Trait)
+///     - Returns a vector orthogonal to `v1` and `v2`
+///     - Assumes no more than three dimensions
+///
+pub trait CrossProduct<T> {
+    fn cross_prod(self, v2: Vec<T>) -> Vec<T> where T: Float;
+}
+
 impl<T> Dot<T> for Vec<T> {
     fn dot(self, v2: Vec<T>) -> T
         where T: Float
@@ -135,6 +143,27 @@ impl<T> EuclideanNorm<T> for Vec<T> {
             norm += x2;
         }
         T::sqrt(num::cast(norm).unwrap())
+    }
+}
+
+impl<T> CrossProduct<T> for Vec<T> {
+    fn cross_prod(self, v2: Vec<T>) -> Vec<T>
+        where T: Float
+    {
+        assert!(self.len() == v2.len(),
+        "Vectors are not of equal length"
+        );
+        assert!(self.len() == 3,
+        "this can only be implemented for 3 dimensions"
+        );
+
+        let len = self.len() - 1;
+
+        let i  = (self[len - 1] * v2[len]) - (self[len] * v2[len - 1]);
+        let j = (self[len] * v2[0]) -  (self[0] * v2[len]);
+        let k = (self[0] * v2[len - 1]) - (self[len - 1] * v2[0]);
+
+        vec![i, j, k]
     }
 }
 
@@ -237,5 +266,25 @@ mod tests {
 
         let expected = 0.0;
         assert_eq!(norm, expected);
+    }
+
+    #[test]
+    fn cross_prod1() {
+        let v = vec![2.0, 1.0, -1.0];
+        let v2 = vec![-3.0, 4.0, 1.0];
+
+        let expected = vec![5.0, 1.0, 11.0];
+        let vec: Vec<f64> = v.cross_prod(v2);
+
+        assert_eq!(vec, expected);
+    }
+
+    #[test]
+    #[should_panic]
+    fn cross_prod2() {
+        let v = vec![2.0, 1.0];
+        let v2 = vec![-3.0, 4.0];
+
+        v.cross_prod(v2);
     }
 }
