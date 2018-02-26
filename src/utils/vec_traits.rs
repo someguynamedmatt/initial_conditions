@@ -41,7 +41,7 @@ pub trait SubVec<T> {
     fn sub_vec(self, v2: Vec<T>) -> Vec<T> where T: Float;
 }
 
-/// # norm (Trait)
+/// # euc_norm (Trait)
 ///     - Returns the Euclidean Norm (length) of the vector (n-dimensional)
 ///
 pub trait EuclideanNorm<T> {

@@ -38,7 +38,7 @@ All arguments and return values are implicitly returned in SI units (i.e. radian
 - Generalized modules are exported in the main `src/lib.rs` file
 > "Generalized", here, means general physics topics: kinematics, electromagnetism, astro, etc.
 
-- Specific topic are exported from the more general, e.g.:
+- Specific topics are exported from the more general, e.g.:
 
 ```
     // Example structure only
