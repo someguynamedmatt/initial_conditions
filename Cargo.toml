@@ -16,4 +16,3 @@ path = "src/lib.rs"
 
 [dependencies]
 num = "0.1.42"
-nalgebra = "0.14.0"
