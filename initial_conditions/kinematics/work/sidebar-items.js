@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["work","Work (constant acceleration):"]]});

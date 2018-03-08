@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["first_accel","First Equation of Motion:"],["first_velocity","First Equation of Motion:"],["second_position","Second Equation of Motion:"]]});

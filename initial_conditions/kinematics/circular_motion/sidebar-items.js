@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["acceleration","Uniform circular motion"],["average_speed","Uniform circular motion"]]});

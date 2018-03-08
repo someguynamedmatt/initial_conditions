@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `vec_traits` mod in crate `initial_conditions`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, vec_traits">
+
+    <title>initial_conditions::utils::vec_traits - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Module vec_traits</p><div class="sidebar-elems"><div class="block items"><ul><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../../index.html'>initial_conditions</a>::<wbr><a href='../index.html'>utils</a></p><script>window.sidebarCurrent = {name: 'vec_traits', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script></div>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../index.html'>initial_conditions</a>::<wbr><a href='../index.html'>utils</a>::<wbr><a class="mod" href=''>vec_traits</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/initial_conditions/utils/vec_traits.rs.html#1-290' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Extended Vec traits
+Addon traits to the standard Rust Vec type.</p>
+</div><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.AddVec.html"
+                                  title='trait initial_conditions::utils::vec_traits::AddVec'>AddVec</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='add_vec-trait' class='section-header'><a href='#add_vec-trait'>add_vec (Trait)</a></h1>
+<ul>
+<li>adds the ith element of <code>v1</code> (<code>self</code>) to the ith element of <code>v2</code></li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.CrossProduct.html"
+                                  title='trait initial_conditions::utils::vec_traits::CrossProduct'>CrossProduct</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='cross_pro-trait' class='section-header'><a href='#cross_pro-trait'>cross_pro (Trait)</a></h1>
+<ul>
+<li>Returns a vector orthogonal to <code>v1</code> and <code>v2</code></li>
+<li>Assumes no more than three dimensions</li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.Dot.html"
+                                  title='trait initial_conditions::utils::vec_traits::Dot'>Dot</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='dot-trait' class='section-header'><a href='#dot-trait'>dot (Trait)</a></h1>
+<ul>
+<li><code>v1.dot(v2) // returns the dot product of the two vectors</code></li>
+<li>panic occurs when <code>v1.len() != v2.len()</code></li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.EuclideanNorm.html"
+                                  title='trait initial_conditions::utils::vec_traits::EuclideanNorm'>EuclideanNorm</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='euc_norm-trait' class='section-header'><a href='#euc_norm-trait'>euc_norm (Trait)</a></h1>
+<ul>
+<li>Returns the Euclidean Norm (length) of the vector (n-dimensional)</li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ScalarDiv.html"
+                                  title='trait initial_conditions::utils::vec_traits::ScalarDiv'>ScalarDiv</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='scalar_div-trait' class='section-header'><a href='#scalar_div-trait'>scalar_div (Trait)</a></h1>
+<ul>
+<li>divides each item in Vec by <code>k</code>, mutating self</li>
+<li>If zero is passed as <code>k</code>, value will be <code>inf</code></li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.ScalarMult.html"
+                                  title='trait initial_conditions::utils::vec_traits::ScalarMult'>ScalarMult</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='scalar_mult-trait' class='section-header'><a href='#scalar_mult-trait'>scalar_mult (Trait)</a></h1>
+<ul>
+<li>multiplies each item in Vec by <code>k</code>, mutating self</li>
+</ul>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.SubVec.html"
+                                  title='trait initial_conditions::utils::vec_traits::SubVec'>SubVec</a></td>
+                           <td class='docblock-short'>
+                                <h1 id='sub_vec-trait' class='section-header'><a href='#sub_vec-trait'>sub_vec (Trait)</a></h1>
+<ul>
+<li>subtracts the ith element of <code>v2</code> from the ith element of <code>v1</code> (<code>self</code>)</li>
+</ul>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>↑</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>↓</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>↹</dt>
+                    <dd>Switch tab</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt style="width:31px;">+ / -</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "initial_conditions";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>
